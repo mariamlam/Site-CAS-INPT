@@ -11,7 +11,6 @@ body {
 .header-image {
     position: relative;
     overflow: hidden;
-    /* Animation subtile au chargement */
     animation: fadeInDown 0.8s ease-out;
 }
 

@@ -2,9 +2,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const joinForm = document.querySelector('form');
 
     joinForm.addEventListener('submit', function(e) {
-        e.preventDefault(); // Stop the page from refreshing
+        e.preventDefault(); 
 
-        // 1. Basic Validation Check
+       
         const name = this.querySelector('input[type="text"]').value;
         const email = this.querySelector('input[type="email"]').value;
         const dept = this.querySelector('select').value;
@@ -14,16 +14,16 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
 
-        // 2. Visual Feedback (Button Animation)
+       
         const submitBtn = this.querySelector('button[type="submit"]');
         const originalText = submitBtn.innerHTML;
         
         submitBtn.disabled = true;
         submitBtn.innerHTML = `<span class="spinner-border spinner-border-sm" role="status"></span> Processing...`;
 
-        // 3. Simulate "Sending" to a server
+        
         setTimeout(() => {
-            // Replace form with a success message
+            
             const cardBody = document.querySelector('.card');
             cardBody.innerHTML = `
                 <div class="text-center py-5 animate-success">

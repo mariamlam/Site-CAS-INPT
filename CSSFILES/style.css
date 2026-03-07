@@ -47,7 +47,6 @@ body {
 .bi-heart-pulse-fill {
     display: inline-block;
     color: #dc3545;
-    /* On part sur 2 secondes pour un rythme calme et serein */
     animation: gentle-beat 2s ease-in-out infinite;
 }
 
@@ -70,9 +69,29 @@ body {
     to { opacity: 1; transform: translateY(0); }
 }
 
-/* --- SECTION EXECUTIVE BOARD --- */
 
-/* Titre de la section */
+html, body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; 
+    width: 100%;
+}
+
+
+#home.hero {
+    width: 100vw;      
+    margin-left: 0;
+    margin-right: 0;
+    left: 0;
+}
+
+
+.row {
+    margin-right: 0;
+    margin-left: 0;
+}
+
+
 h2.text-center.fw-bold {
     color: #2c3e50;
     position: relative;
@@ -87,10 +106,20 @@ h2.text-center.fw-bold::after {
     transform: translateX(-50%);
     width: 60px;
     height: 4px;
-    background-color: #dc3545; /* Rappel du rouge du cœur */
+    background-color: #dc3545; 
     border-radius: 2px;
 }
 
+.hero-text, .hero-lead {
+    opacity: 0;                   
+    transform: translateY(30px);  
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+.hero-text.show, .hero-lead.show {
+    opacity: 1;
+    transform: translateY(0);     
+}
 
 .member-img-container {
     width: 160px;
@@ -126,7 +155,7 @@ h2.text-center.fw-bold::after {
     font-weight: 600;
 }
 
-/* Icônes LinkedIn */
+
 .social-links a {
     display: inline-block;
     width: 35px;
@@ -134,7 +163,7 @@ h2.text-center.fw-bold::after {
     line-height: 35px;
     background: #f8f9fa;
     border-radius: 50%;
-    color: #0077b5; /* Bleu LinkedIn */
+    color: #0077b5; 
     transition: all 0.3s ease;
     text-decoration: none;
 }
@@ -177,7 +206,7 @@ h2.text-center.fw-bold::after {
 
 .card:hover {
     transform: translateY(-10px); 
-    shadow: 0 10px 20px rgba(0,0,0,0.15) !important;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15) !important;
 }
 
 .card i {
@@ -185,9 +214,30 @@ h2.text-center.fw-bold::after {
 }
 
 .card:hover i {
-    transform: scale(1.2) rotate(5deg); /* L'icône bouge un peu */
+    transform: scale(1.2) rotate(5deg); 
 }
 
+.card-enlarged {
+    transform: scale(1.2);
+    transition: transform 0.3s ease;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+    z-index: 10;
+}
+
+#announcement-banner {
+    position: fixed;      
+    top: -50px;           
+    left: 0;
+    width: 100%;
+    background-color: #0d6efd; 
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+    font-weight: bold;
+    z-index: 9999;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: top 0.5s ease;
+}
 
 .bg-light.rounded-4 {
     transition: var(--transition-smooth);
@@ -233,3 +283,131 @@ footer {
 .member-card:hover {
     transform: translateY(-10px);
 }
+
+nav.navbar.scrolled {
+    background-color: rgb(21, 80, 80) !important;
+}
+.navbar {
+    transition: background-color 0.4s ease;
+}
+
+.live-badge {
+    display: block;          
+    width: fit-content;     
+    margin: 10px auto 0;  
+    background-color: #28a745;
+    color: white;
+    padding: 2px 8px;
+    font-size: 12px; 
+    border-radius: 20px;
+    font-weight: 600;
+    display: inline-block;
+}
+
+.live-badge:hover {
+    transform: translateY(-2px);
+    transition: 0.3s ease;
+}
+
+#extraHeroContent {
+    display: none;
+}
+
+#backToTop {
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  width: 50px;
+  height: 50px;
+  background: #1a1a2e;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  font-size: 1.4rem;
+  line-height: 50px;
+  text-align: center;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transition: background 0.3s, transform 0.2s, opacity 0.3s;
+  z-index: 999999;
+}
+
+#backToTop:hover {
+  background: #e94560;
+  transform: translateY(-3px);
+}
+
+#scrollProgress{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 5px;
+    width: 0%;
+    background: linear-gradient(90deg, #0d6efd, #20c997);;
+    z-index: 9999;
+}
+
+.member-active{
+    border: 3px solid #0d6efd;
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+.first-activity{
+    border: 3px solid #0d6efd;
+    background-color: #e7f1ff;
+}
+
+.last-activity{
+    border: 3px solid #198754;
+    background-color: #e6f7ee;
+}
+
+#home{
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+#lock-overlay{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.85);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    z-index: 9999;
+}
+
+.lock-message{
+    background: rgba(255,255,255,0.1);
+    padding: 40px;
+    border-radius: 10px;
+}
+
+
+body {
+    background-color: #fff;
+    color: #000;
+}
+
+
+body.dark-mode {
+    background-color: #121212;
+    color: #f0f0f0;
+}
+
+
+body.dark-mode .card, 
+body.dark-mode .member-card {
+    background-color: #1e1e1e;
+    color: #f0f0f0;
+    border-color: #333;
+}
+

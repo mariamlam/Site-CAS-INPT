@@ -16,6 +16,7 @@
         <a class="navbar-brand fw-bold text-primary" href="#">
             <i class="bi bi-heart-fill me-2"></i>Club Affaires Sociales INPT
         </a>
+    
 
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#clubNavbar">
             <span class="navbar-toggler-icon"></span>
@@ -36,6 +37,7 @@
                     <a class="nav-link" href="#contact">Get Help</a>
                 </li>
             </ul>
+        <button id="darkModeBtn" class="btn btn-secondary">Dark Mode</button>
 
             <div class="d-flex">
     <a href="joinus.html" class="btn btn-primary rounded-pill px-4">
@@ -46,24 +48,64 @@
         </div>
     </div>
 </nav>
+<div id="announcement-banner" class="banner">
+    Exploring our latest initiatives for 2026? Check out our new activities below.
+</div>
+<div id="scrollProgress"></div>
+<div class="modal fade" id="welcomeModal" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content text-center p-4">
+
+      <div class="modal-header">
+        <h5 class="modal-title fw-bold">Welcome</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+
+      <div class="modal-body">
+        <p>to the heart of student giving. We're glad you're here!</p>
+        <button class="btn btn-danger" data-bs-dismiss="modal">Get Started</button>
+      </div>
+
+    </div>
+  </div>
+</div>
 
 <section id="home" class="hero d-flex align-items-center justify-content-center text-white text-center shadow-lg" 
-    style="background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../assests/hero3.png'); 
+    style="background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../assests/hero\ 4.png'); 
            background-size: cover; 
            background-position: center; 
-           min-height: 80vh;">
+           min-height:100vh;">
     
-    <div class="container">
-        <h1 class="display-3 fw-bold mb-3">
-            <i class="bi bi-heart-pulse-fill text-danger"></i> <br>
-            قلب ينبض بالعطاء
-        </h1>
-        <p class="lead mb-4 fs-3">
-           Join the movement. Together, let’s make an impact.
-        </p>
+    <div class="container-fluid">
+        <h1 class="display-3 fw-bold mb-3 hero-text">
+    <i class="bi bi-heart-pulse-fill text-danger"></i> <br>
+    قلب ينبض بالعطاء
+</h1>
+<p class="lead mb-4 fs-3 hero-lead">
+    Join the movement. Together, let’s make an impact.
+</p>
+        <button id="toggleHeroBtn" class="btn btn-primary rounded-pill px-4 mt-3">
+    Learn More
+</button>
+
+<div id="extraHeroContent" class="mt-4 p-4 bg-white text-dark rounded-4 shadow-sm">
+    <h5 class="fw-bold">Why Support Us?</h5>
+    <p class="mb-0">
+        Your contribution helps us fund blood drives, education support,
+        and solidarity initiatives across Morocco.
+    </p>
+</div>
        
     </div>
 </section>
+<div id="lock-overlay">
+    <div class="lock-message">
+        <h2>🔒 Continue exploring!</h2>
+        <p>Please interact with the page to unlock scrolling.</p>
+        <button id="unlock-btn" class="btn btn-danger">Unlock</button>
+    </div>
+</div>
+
 
 <section id="about" class="py-5 bg-white">
     <div class="container">
@@ -114,8 +156,11 @@
                 <h5 class="fw-bold mb-0">ABDESSAMAD MAHJOUBI</h5>
                 <p class="text-muted small">President </p>
                 <div class="social-links">
-                    <a href="#" class="text-primary"><i class="bi bi-linkedin"></i></a>
+                    <a href="https://www.linkedin.com/in/abdessamad-mahjoubi-5bb16b309/" target="_blank" class="text-primary">
+                        <i class="bi bi-linkedin"></i>
+                    </a>
                 </div>
+                <button class="btn btn-danger btn-sm mt-2 delete-btn">Delete</button>
             </div>
         </div>
 
@@ -127,8 +172,11 @@
                 <h5 class="fw-bold mb-0">OTHMANE WINA</h5>
                 <p class="text-muted small">Vice-President </p>
                 <div class="social-links">
-                    <a href="#" class="text-primary"><i class="bi bi-linkedin"></i></a>
+                    <a href="https://www.linkedin.com/in/othmane-wina-16142131a/" target="_blank" class="text-primary">
+                        <i class="bi bi-linkedin"></i>
+                    </a>
                 </div>
+                <button class="btn btn-danger btn-sm mt-2 delete-btn">Delete</button>
             </div>
         </div>
 
@@ -140,8 +188,11 @@
                 <h5 class="fw-bold mb-0">SAAD KOUTAT</h5>
                 <p class="text-muted small">Treasurer </p>
                 <div class="social-links">
-                    <a href="#" class="text-primary"><i class="bi bi-linkedin"></i></a>
+                    <a href="https://www.linkedin.com/in/saad-koutat-794974333/" class="text-primary" target="_blank">
+                        <i class="bi bi-linkedin"></i>
+                    </a>
                 </div>
+                <button class="btn btn-danger btn-sm mt-2 delete-btn">Delete</button>
             </div>
         </div>
 
@@ -154,6 +205,7 @@
             <h2 class="fw-bold">Our Actions</h2>
             <p class="text-muted">Discover our 9 core initiatives serving the community.</p>
         </div>
+        <p>Total Activities: <span id="activity-count">0</span></p>
 
         <div class="row g-4">
             
@@ -166,8 +218,10 @@
             <p class="small text-muted">
                 Organizing donation days at INPT to save lives and promote solidarity within our community.
             </p>
+            <button class="btn btn-primary btn-sm change-bg">Change Background</button>
         </div>
     </div>
+    
 </div>
 
             <div class="col-md-4">
@@ -176,6 +230,7 @@
                         <i class="bi bi-pencil-square text-primary fs-1"></i>
                         <h5 class="fw-bold mt-3">Neqraw Jmi3</h5>
                         <p class="small text-muted">Providing complete school supplies to underprivileged children to ensure a better educational future.</p>
+                        <button class="btn btn-primary btn-sm change-bg">Change Background</button>
                     </div>
                 </div>
             </div>
@@ -186,6 +241,7 @@
                         <i class="bi bi-truck text-success fs-1"></i>
                         <h5 class="fw-bold mt-3">Al Ihssan Caravan</h5>
                         <p class="small text-muted">Improving access to clean water and hygiene in remote rural areas.</p>
+                        <button class="btn btn-primary btn-sm change-bg">Change Background</button>
                     </div>
                 </div>
             </div>
@@ -196,6 +252,7 @@
                         <i class="bi bi-book-half text-info fs-1"></i>
                         <h5 class="fw-bold mt-3">Academic Support</h5>
                         <p class="small text-muted">Dedicated members provide tutoring to empower learners and improve their educational journeys.</p>
+                        <button class="btn btn-primary btn-sm change-bg">Change Background</button>
                     </div>
                 </div>
             </div>
@@ -206,6 +263,7 @@
                         <i class="bi bi-cpu text-warning fs-1"></i>
                         <h5 class="fw-bold mt-3">Little Engineer</h5>
                         <p class="small text-muted">Introducing children to engineering and sciences through fun, hands-on educational activities.</p>
+                        <button class="btn btn-primary btn-sm change-bg">Change Background</button>
                     </div>
                 </div>
             </div>
@@ -216,6 +274,7 @@
                         <i class="bi bi-moon-stars-fill text-dark fs-1"></i>
                         <h5 class="fw-bold mt-3">Action Ramadan</h5>
                         <p class="small text-muted">Providing Ftour meals to those in need, sharing the warmth and solidarity of the holy month.</p>
+                        <button class="btn btn-primary btn-sm change-bg">Change Background</button>
                     </div>
                 </div>
             </div>
@@ -226,6 +285,7 @@
                         <i class="bi bi-gift text-danger fs-1"></i>
                         <h5 class="fw-bold mt-3">Aid Sghir</h5>
                         <p class="small text-muted">Offering new clothes to orphans for Aid Al-Fitr to bring them joy and dignity.</p>
+                        <button class="btn btn-primary btn-sm change-bg">Change Background</button>
                     </div>
                 </div>
             </div>
@@ -236,6 +296,7 @@
                         <i class="bi bi-cash-stack text-success fs-1"></i>
                         <h5 class="fw-bold mt-3">Madkhoul</h5>
                         <p class="small text-muted">Financing income-generating projects to support families in precarious situations.</p>
+                        <button class="btn btn-primary btn-sm change-bg">Change Background</button>
                     </div>
                 </div>
             </div>
@@ -246,11 +307,30 @@
                         <i class="bi bi-heart-fill text-primary fs-1"></i>
                         <h5 class="fw-bold mt-3">Farhat Al Aid</h5>
                         <p class="small text-muted">Donating sheep to families in need to celebrate Aid Al-Adha with dignity.</p>
+                        <button class="btn btn-primary btn-sm change-bg">Change Background</button>
                     </div>
                 </div>
             </div>
 
-        </div> </div>
+           <div class="col-md-4  mx-auto">
+    <div class="card h-100 border-0 shadow-sm">
+        <div class="card-body p-4">
+            <i class="bi bi-people-fill text-primary fs-1"></i>
+            <h5 class="fw-bold mt-3">Nursing Home Visit</h5>
+            <p class="small text-muted">
+                Visiting senior citizens in nursing homes, spending time with them, 
+                and bringing support and companionship.
+            </p>
+            <button class="btn btn-primary btn-sm change-bg">Change Background</button>
+        </div>
+    </div>
+</div>
+    <div class="text-center mt-5">
+    <button id="addActivityBtn" class="btn btn-primary rounded-pill px-4">
+        <i class="bi bi-plus-circle me-2"></i>Add New Activity
+    </button>
+</div>
+</div> </div>
 </section>
 <section id="contact" class="py-5 bg-white">
     <div class="container">
@@ -339,8 +419,10 @@
             <p class="mb-0">© 2026 Club Affaires Sociales INPT - All Rights Reserved.</p>
         </div>
     </footer>
+<button id="backToTop" title="Back to Top">&#8679;</button>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 <script src="../JSFILES/script.js"></script>
 
 </body>
