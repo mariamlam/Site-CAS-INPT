@@ -1,0 +1,21 @@
+# Variables d'environnement
+.env
+.env.local
+.env.production
+
+# Base de données SQLite
+*.db
+*.sqlite
+*.sqlite3
+
+# Dépendances Node.js
+node_modules/
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+
+# Système
+.DS_Store
+Thumbs.db
